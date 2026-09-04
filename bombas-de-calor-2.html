@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+	<!-- Basic Page Needs -->
+	<meta charset="utf-8">
+	<title>Tecnogreen - Bombas de Calor</title>
+	<meta name="description" content="Dispositivo eléctrico que permite calentar el agua de la piscina, alargando el uso de la misma a
+	bajo costo y de forma ecológica.">
+	<meta name="author" content="Tecnogreen">
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="images/tecnogreen/favicon.png">
+	<!-- FONTS -->
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,400italic,500,600,700,700italic,900'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- CSS -->
+	<link rel='stylesheet' href='content/landing3/css/structure.css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='content/landing3/css/landing3.css'>
+	<!-- Revolution Slider -->
+	<link rel="stylesheet" href="plugins/rs-plugin-6.custom/css/rs6.css">
+
+	<!-- Hero: ondas animadas simulando el calor que genera la bomba en el agua (solo para esta landing) -->
+	<style>
+		@keyframes tgn-heat-wave {
+			0% {
+				transform: translateY(0) scale(1);
+				filter: drop-shadow(0 0 0px rgba(255, 140, 40, 0));
+			}
+			50% {
+				transform: translateY(-6px) scale(1.015);
+				filter: drop-shadow(0 0 10px rgba(255, 140, 40, 0.55));
+			}
+			100% {
+				transform: translateY(0) scale(1);
+				filter: drop-shadow(0 0 0px rgba(255, 140, 40, 0));
+			}
+		}
+		.tgn-heat-wave {
+			animation: tgn-heat-wave 3s ease-in-out infinite;
+			will-change: transform, filter;
+		}
+		@media (prefers-reduced-motion: reduce) {
+			.tgn-heat-wave {
+				animation: none;
+			}
+		}
+
+		/* FAQ accesible en grid de 3 columnas (prefijo propio tg-faq- para no pisar el tema) */
+		.tg-faq-section-bg {
+			background: #F5F5F5;
+			padding: 50px 20px 40px;
+			border-radius: 18px;
+		}
+		.tg-faq {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 24px;
+			max-width: 1200px;
+			margin: 0 auto;
+			text-align: left;
+		}
+		@media only screen and (min-width: 992px) {
+			.tg-faq {
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 0 32px;
+			}
+		}
+		.tg-faq-col {
+			display: flex;
+			flex-direction: column;
+			background: #ffffff;
+			border-radius: 14px;
+			padding: 28px 26px;
+			box-shadow: 0 4px 22px rgba(37, 37, 37, .07);
+		}
+		.tg-faq-group-title {
+			margin: 0 0 10px;
+			padding-top: 0;
+			font-family: Lato, sans-serif;
+			font-size: 14px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: .8px;
+			color: #252525;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+		.tg-faq-group-icon-wrap {
+			flex: none;
+			width: 42px;
+			height: 42px;
+			border-radius: 50%;
+			background: #E5F2DF;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.tg-faq-group-icon {
+			flex: none;
+			width: 22px;
+			height: 22px;
+			color: #418D29;
+		}
+		.tg-faq-col > .tg-faq-group-title:first-child {
+			padding-top: 0;
+		}
+		.tg-faq-item {
+			border-bottom: 1px solid #e5e5e5;
+			margin-bottom: 5px;
+		}
+		.tg-faq-col > .tg-faq-item:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+		.tg-faq-q {
+			margin: 0;
+			font-size: 100%;
+			font-weight: 400;
+		}
+		.tg-faq-btn {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
+			width: 100%;
+			background: none !important;
+			border-width: 1px !important;
+			border-style: solid !important;
+			border-color: transparent !important;
+			margin: 0;
+			cursor: pointer;
+			padding: 18px 2px;
+			font-family: Lato, sans-serif;
+			font-size: 16px;
+			font-weight: 400;
+			color: #252525 !important;
+			text-align: left;
+		}
+		.tg-faq-btn:hover {
+			background: none !important;
+			color: #418D29 !important;
+		}
+		.tg-faq-btn:focus-visible {
+			outline: 1px solid #418D29;
+			outline-offset: 2px;
+		}
+		.tg-faq-btn[aria-expanded="true"] {
+			color: #418D29 !important;
+			font-weight: 700;
+		}
+		.tg-faq-chevron {
+			flex: none;
+			width: 16px;
+			height: 16px;
+			color: #418D29;
+			transition: transform .25s ease;
+		}
+		.tg-faq-btn[aria-expanded="true"] .tg-faq-chevron {
+			transform: rotate(180deg);
+		}
+		.tg-faq-panel {
+			overflow: hidden;
+			max-height: 0;
+			transition: max-height .3s ease;
+		}
+		.tg-faq-panel-inner {
+			padding: 0 2px 20px;
+		}
+		.tg-faq-panel-inner p {
+			margin: 0 0 10px;
+			color: #252525;
+			line-height: 1.6;
+		}
+		.tg-faq-panel-inner p:last-child {
+			margin-bottom: 0;
+		}
+		.tg-faq-aside {
+			font-size: 13px;
+			color: #747474;
+			border-left: 2px solid #eee;
+			padding-left: 12px;
+		}
+
+		/* Sección contacto: grid de 2 columnas (texto+imagen / formulario) */
+		.tgn-contact-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			align-items: start;
+			gap: 40px;
+		}
+		@media only screen and (min-width: 992px) {
+			.tgn-contact-grid {
+				grid-template-columns: 45% 55%;
+				gap: 60px;
+				align-items: center;
+			}
+		}
+		.tgn-contact-title {
+			text-align: left;
+			font-size: 34px;
+			line-height: 1.25;
+		}
+		@media only screen and (min-width: 992px) {
+			.tgn-contact-info {
+				padding-top: 30px;
+			}
+		}
+		.tgn-contact-form #contactWrapper {
+			width: 100%;
+		}
+	</style>
+
+	<!-- Hotjar Tracking Code for https://tecnogreen.com.ar/landing/bombas-de-calor.html -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:6498888,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0J5M25PJTM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0J5M25PJTM');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MQNTNKQJ');</script>
+	<!-- End Google Tag Manager -->
+
+
+</head>
+
+<body class="home page template-slider style-simple button-custom layout-full-width one-page no-content-padding header-transparent header-fw sticky-header sticky-tb-color ab-hide subheader-both-center menu-line-below-80-1 menuo-right menuo-no-borders mobile-tb-center mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-sticky">
+
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQNTNKQJ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+	<a href="https://wa.me/5491171820002?text=Hola%20quiero%20más%20información" class="whatsapp" target="_blank">
+		<i class="fa fa-whatsapp whatsapp-icon"></i>
+	  </a>
+
+
+	<div id="Wrapper">
+		<div id="Header_wrapper">
+			<header id="Header">
+				<div id="Top_bar">
+					<div class="container">
+						<div class="column one">
+							<div class="top_bar_left clearfix">
+								<div class="logo">
+									<a id="logo" href="#" title="Tecnogreen" data-height="80" data-padding="15">
+										<img class="logo-main scale-with-grid" src="images/tecnogreen/logo.png" data-retina="images/tecnogreen/logo.png" data-height="51">
+										<img class="logo-sticky scale-with-grid" src="images/tecnogreen/logo.png" data-retina="images/tecnogreen/logo.png" data-height="51">
+										<img class="logo-mobile scale-with-grid" src="images/tecnogreen/logo.png" data-retina="images/tecnogreen/logo.png" data-height="51">
+										<img class="logo-mobile-sticky scale-with-grid" src="images/tecnogreen/logo.png" data-retina="images/tecnogreen/logo.png" data-height="51">
+									</a>
+								</div>
+								<div class="menu_wrapper">
+									<nav id="menu">
+										<ul id="menu-main-menu" class="menu menu-main">
+											<li> <a href="#Header_wrapper"><span>Inicio</span></a> 
+											</li>
+											<li> <a href="#precio"><span>Precio</span></a>
+											</li>
+											<li> <a href="#faq"><span>Preguntas Frecuentes</span></a>
+											</li>
+											<li> <a href="#contacto"><span>Contacto</span></a> 
+											</li>
+											
+										</ul>
+									</nav><a class="responsive-menu-toggle" href="#"><i class="icon-menu-fine"></i></a> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mfn-main-slider mfn-rev-slider">
+					<p class="rs-p-wp-fix"></p>
+					<rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+						<rs-module id="rev_slider_1_1" data-version="6.2.22">
+							<rs-slides>
+								<rs-slide data-key="rs-1" data-title="Slide" data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
+									<img src="images/tecnogreen/fondo-pileta-c.jpg" data-bg="f:auto;" data-parallax="off" class="rev-slidebg">
+									<rs-layer id="slider-1-slide-1-layer-1" data-type="image" data-rsp_ch="on" data-xy="x:c;y:m;yo:40px,40px,25px,25px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-dim="w:1920px,800px,600px,600px;h:1015px,915px,800px,800px;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:8;">
+										<!-- <img src="images/tecnogreen/bg1.jpg" width="1920" height="615"> -->
+									</rs-layer>
+
+								
+
+									<rs-layer id="slider-1-slide-1-layer-2" data-type="text" data-color="#ffffff" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:80px,80px,0,80px;yo:230px,230px,73px,73px;" data-text="w:normal;s:90,90,80,80;l:100,100,90,90;ls:1px,1px,0px,0px;fw:700;a:left,left,center,center;" data-dim="w:500px,500px,600px,600px;" data-frame_0="y:50,50,31,31;" data-frame_1="st:100;sp:800;sR:100;" data-frame_999="o:0;st:w;sR:8100;" style="z-index:9;font-family:Lato; 
+									text-shadow: 1px 1px #212529;"><span style="font-weight: 300;">Expertos en</span> climatización
+										eficiente</rs-layer>
+										<rs-layer id="slider-1-slide-1-layer-3" data-type="text" data-color="#ffffff" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:80px,80px,0,80px;yo:550px,550px,386px,386px;" data-text="w:normal;s:40,40,50,50;l:50,50,90,90;ls:1px,1px,0px,0px;fw:700;a:left,left,center,center;" data-dim="w:600px,600px,600px,600px;" data-frame_0="y:50,50,31,31;" data-frame_1="st:100;sp:800;sR:100;" data-frame_999="o:0;st:w;sR:8100;" style="z-index:10;font-family:Lato;
+										text-shadow: 1px 1px #212529; ">Bombas de calor para piletas</rs-layer>
+								
+									<rs-layer id="slider-1-slide-1-layer-5" data-type="image" data-rsp_ch="on" data-xy="x:c;xo:110px,110px,-190px,-190px;y:m;yo:60px,60px,340px,340px;" data-dim="w:400px,400px,480px,480px;h:auto;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:11;">
+										<img src="images/tecnogreen/nino-pileta.png" style="width:100%; height:auto;">
+									</rs-layer>
+
+									<rs-layer id="slider-1-slide-1-layer-7" data-type="image" data-rsp_ch="on" data-xy="x:c;xo:150px,150px,-20px,-20px;y:b;yo:-30px,-30px,0px,0px;" data-dim="w:480px,480px,140px,140px;h:auto;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:10;">
+										<img class="tgn-heat-wave" src="images/tecnogreen/ondas-pileta.png" style="width:100%; height:auto;">
+									</rs-layer>
+
+									<rs-layer id="slider-1-slide-1-layer-6" data-type="image" data-rsp_ch="on" data-xy="x:c;xo:520px,520px,250px,250px;y:m;yo:40px,40px,340px,340px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-dim="w:850px,850px,600px,600px;h:auto;" data-frame_0="sX:0.8;sY:0.8;" data-frame_1="e:power4.out;st:260;sp:1000;sR:260;" data-frame_999="o:0;st:w;sR:7740;" style="z-index:12;">
+										<img src="images/tecnogreen/producto.png" style="width:100%; height:auto;">
+									</rs-layer>
+								</rs-slide>
+							</rs-slides>
+						</rs-module>
+					</rs-module-wrap>
+				</div>
+			</header>
+		</div>
+		<div id="Content">
+			<div class="content_wrapper clearfix">
+				<div class="sections_group">
+
+
+
+                    <div class="section mcb-section equal-height-wrap mobile_small_padding precio">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="column mcb-column one column_image">
+										<div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+											<div class="image_wrapper">
+												<img class="scale-with-grid" src="images/tecnogreen/precio.png" alt="Tecnogreen - Bombas de Calor">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="precio" class="col-md-6" style="padding:0 5%">
+									<hr class="no_line" style="margin:0 auto 60px">
+									<div class="column mcb-column one column_column">
+										<h2>¡REVOLUCIONÁ TU PILETA!</h2>
+										<p>Disfrutala en todo momento, sin limites, con el agua a la temperatura que mas te gusta.
+											Extende la temporada de pileta con la tecnología más eficiente del mercado.</p>
+
+                                        <h3>Precio desde	<span style="color: #418D29;font-size: 1.3em;"><strong>$2.179.185</strong></span> 	</h3>
+										<p >Precio con impuestos Nacionales: $2.408.000</p>
+									</div>
+								
+									<div class="column mcb-column one column_button"> <a class="button" href="#contacto">Contactanos Ahora</a> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<div class="section mcb-section mobile_small_padding"  style="background-color: #f5f5f5;">
+						<div class="container">
+							<div class="row text-center">
+								<div class="col-12">
+									<div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+										
+									</div>
+									<hr class="no_line" style="margin:0 auto 40px">
+								</div>
+								<div class="col-md-3">
+									<div class="placeholder">&nbsp;</div>
+								</div>
+								<div class="col-md-6">
+									<div class="column_attr clearfix align_center">
+										<h2><span style="font-weight: 300;">Conocé sus</span>  
+												
+													beneficios</h2> 
+									</div>
+									<hr class="no_line" style="margin:0 auto 50px">
+								</div>
+							</div>
+							<div class="row" style="padding-bottom: 40px;">
+								<div class="col-md-4 mb-4">
+									<div class="text-center" style="background-color:#fff;padding:0px 0px 25px;box-shadow: 0px 5px 13px 0px rgba(39,39,39,0.05); border-radius: 10px;">
+										<div class="image_frame image_item no_link scale-with-grid alignnone no_border">
+											<div class="image_wrapper">
+												<img class="scale-with-grid" src="images/tecnogreen/celular.jpg" alt="Tecnogreen - Bombas de Calor">
+											</div>
+										</div>
+										<hr class="no_line" style="margin:0 auto 30px">
+										<h3 style="color: #252525;">COMODIDAD <br> &nbsp;</h3>
+										<p style="padding: 0px 20px;">Elegí la temperatura que más te gusta desde tu celular, donde sea que estes.</p>
+									</div>
+								</div>
+								<div class="col-md-4 mb-4">
+									<div class="text-center" style="background-color:#fff;padding:0px 0px 25px;box-shadow: 0px 5px 13px 0px rgba(39,39,39,0.05); border-radius: 10px;">
+										<div class="image_frame image_item no_link scale-with-grid alignnone no_border">
+											<div class="image_wrapper">
+												<img class="scale-with-grid" src="images/tecnogreen/tecnico_bomba.jpg" alt="Tecnogreen - Bombas de Calor">
+											</div>
+										</div>
+										<hr class="no_line" style="margin:0 auto 30px">
+										<h3 style="color: #252525;">FACIL <br> INSTALACIÓN</h3>
+										<p style="padding: 0px 20px;">Solo hay que incorporar la bomba al sistema de filtrado de la pileta.
+											</p>
+									</div>
+								</div>
+								<div class="col-md-4 mb-4">
+									<div class="text-center" style="background-color:#fff;padding:0px 0px 25px;box-shadow: 0px 5px 13px 0px rgba(39,39,39,0.05); border-radius: 10px;">
+										<div class="image_frame image_item no_link scale-with-grid alignnone no_border">
+											<div class="image_wrapper">
+												<img class="scale-with-grid" src="images/tecnogreen/contacto.jpg" alt="Tecnogreen - Bombas de Calor">
+											</div>
+										</div>
+										<hr class="no_line" style="margin:0 auto 30px">
+										<h3 style="color: #252525;">EFICIENCIA <br> ENERGETICA</h3>
+										<p style="padding: 0px 20px;">Al extraer el calor del aire, genera más energía de la que consume</p>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+
+					<div class="section mcb-section full-width" style="padding:0;">
+						<img class="scale-with-grid" src="images/tecnogreen/temporada_completa.png" alt="Tecnogreen - Temporada Extendida" style="width:100%; height:auto; display:block;">
+					</div>
+
+
+					<div class="section mcb-section mobile_small_padding" id="contacto" style="background-color: #f5f5f5;">
+						<div class="section_wrapper mcb-section-inner">
+							<div class="wrap mcb-wrap one  valign-top clearfix">
+								<div class="mcb-wrap-inner">
+									<div class="column mcb-column one column_column ">
+										<hr class="no_line" style="margin:0 auto 50px">
+										<div class="tgn-contact-grid">
+											<div class="tgn-contact-info">
+												<h3 class="tgn-contact-title" style="font-weight:600; color:#252525;">Climatizá tu pileta con nuestras Bombas de Calor y disfrutá de un verano entero con agua a 28°.</h3>
+
+												<h3 class="tgn-contact-title" style="color:#418D29; font-weight:400;">Dejamos tus datos y te contactamos</h3>
+												<img src="images/tecnogreen/celular.jpg" style="border-radius: 5px;">
+											</div>
+											<div class="tgn-contact-form">
+												<div id="contactWrapper">
+
+
+													<div id="zf_div_VlxArnJagBHCcpOl9nNqVefBOJNi_c3k3_ZB5vQg78o">
+													</div>
+													<script type="text/javascript">
+													(function() {
+														try{
+															var f = document.createElement("iframe");
+
+																var ifrmSrc = 'https://forms.zohopublic.com/tecnogreenadsgm1/form/Formularioacotado/formperma/VlxArnJagBHCcpOl9nNqVefBOJNi_c3k3_ZB5vQg78o?zf_rszfm=1';
+
+
+															try{
+																if ( typeof ZFAdvLead != "undefined" && typeof zfutm_zfAdvLead != "undefined" ) {
+																	for( var prmIdx = 0 ; prmIdx < ZFAdvLead.utmPNameArr.length ; prmIdx ++ ) {
+																		var utmPm = ZFAdvLead.utmPNameArr[ prmIdx ];
+																		utmPm = ( ZFAdvLead.isSameDomian && ( ZFAdvLead.utmcustPNameArr.indexOf(utmPm) == -1 ) ) ? "zf_" + utmPm : utmPm;
+																		var utmVal = zfutm_zfAdvLead.zfautm_gC_enc( ZFAdvLead.utmPNameArr[ prmIdx ] );
+																		if ( typeof utmVal !== "undefined" ) {
+																		  if ( utmVal != "" ) {
+																			if(ifrmSrc.indexOf('?') > 0){
+																				 ifrmSrc = ifrmSrc+'&'+utmPm+'='+utmVal;
+																			}else{
+																				ifrmSrc = ifrmSrc+'?'+utmPm+'='+utmVal;
+																			}
+																		  }
+																		}
+																	}
+																}
+																if ( typeof ZFLead !== "undefined" && typeof zfutm_zfLead !== "undefined" ) {
+																	for( var prmIdx = 0 ; prmIdx < ZFLead.utmPNameArr.length ; prmIdx ++ ) {
+																		var utmPm = ZFLead.utmPNameArr[ prmIdx ];
+																		var utmVal = zfutm_zfLead.zfutm_gC_enc( ZFLead.utmPNameArr[ prmIdx ] );
+																		if ( typeof utmVal !== "undefined" ) {
+																		  if ( utmVal != "" ){
+																			if(ifrmSrc.indexOf('?') > 0){
+																			  ifrmSrc = ifrmSrc+'&'+utmPm+'='+utmVal;//No I18N
+																			}else{
+																			  ifrmSrc = ifrmSrc+'?'+utmPm+'='+utmVal;//No I18N
+																			}
+																		  }
+																		}
+																	  }
+																}
+															}catch(e){}
+
+															f.src = ifrmSrc;
+															f.style.border="none";
+															f.style.height="795px";
+															f.style.width="99%";
+															f.style.transition="all 0.5s ease";
+															f.setAttribute("aria-label", 'Formulario acotado');
+
+															var d = document.getElementById("zf_div_VlxArnJagBHCcpOl9nNqVefBOJNi_c3k3_ZB5vQg78o");
+															d.appendChild(f);
+															window.addEventListener('message', function (){
+																var evntData = event.data;
+																if( evntData && evntData.constructor == String ){
+																	var zf_ifrm_data = evntData.split("|");
+																	if ( zf_ifrm_data.length == 2 || zf_ifrm_data.length == 3 ) {
+																		var zf_perma = zf_ifrm_data[0];
+																		var zf_ifrm_ht_nw = ( parseInt(zf_ifrm_data[1], 10) + 15 ) + "px";
+																		var iframe = document.getElementById("zf_div_VlxArnJagBHCcpOl9nNqVefBOJNi_c3k3_ZB5vQg78o").getElementsByTagName("iframe")[0];
+																		if ( (iframe.src).indexOf('formperma') > 0 && (iframe.src).indexOf(zf_perma) > 0 ) {
+																			var prevIframeHeight = iframe.style.height;
+																			var zf_tout = false;
+																			if( zf_ifrm_data.length == 3 ) {
+																				iframe.scrollIntoView();
+																				zf_tout = true;
+																			}
+
+																			if ( prevIframeHeight != zf_ifrm_ht_nw ) {
+																				if( zf_tout ) {
+																					setTimeout(function(){
+																						iframe.style.height = zf_ifrm_ht_nw;
+																					},500);
+																				} else {
+																					iframe.style.height = zf_ifrm_ht_nw;
+																				}
+																			}
+																		}
+																	}
+																}
+															}, false);
+														}catch(e){}
+													})();
+													</script>
+
+
+												</div>
+											</div>
+										</div>
+										<hr class="no_line" style="margin:50px auto 0">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				<!-- 	FAQs -->
+
+
+					<div class="section mcb-section mobile_small_padding" id="faq" style="padding-top:60px; padding-bottom:40px;">
+						<div class="section_wrapper mcb-section-inner">
+							<div class="wrap mcb-wrap one  valign-top clearfix">
+								<div class="mcb-wrap-inner">
+									<div class="column mcb-column one column_column ">
+										<div class="column_attr clearfix align_center">
+											<h2 style="color:#418D29; font-weight:400;">Preguntas frecuentes</h2>
+										</div>
+										<hr class="no_line" style="margin:0 auto 30px">
+										<div class="tg-faq-section-bg">
+										<div class="tg-faq" id="tg-faq">
+
+											<div class="tg-faq-col">
+												<h3 class="tg-faq-group-title">
+													<span class="tg-faq-group-icon-wrap"><svg class="tg-faq-group-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<rect x="2" y="6" width="20" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/>
+														<circle cx="9" cy="12.5" r="3.2" stroke="currentColor" stroke-width="1.6"/>
+														<path d="M9 10v1.2M9 15v-1.2M7 12.5H6.5M11.5 12.5H11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+														<path d="M15 11h4M15 14h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+														<path d="M6 3v2M12 3v2M18 3v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+													</svg></span>
+													El equipo
+												</h3>
+
+												<div class="tg-faq-item">
+													<h4 class="tg-faq-q">
+														<button type="button" class="tg-faq-btn" id="tg-faq-btn-1" aria-expanded="false" aria-controls="tg-faq-panel-1">
+															<span>¿Qué es una bomba de calor y cómo funciona?</span>
+															<svg class="tg-faq-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+														</button>
+													</h4>
+													<div class="tg-faq-panel" id="tg-faq-panel-1" role="region" aria-labelledby="tg-faq-btn-1">
+														<div class="tg-faq-panel-inner">
+															<p>Es un equipo eléctrico que utiliza la temperatura del aire para transferir calor al agua de tu pileta. Es el sistema más eficiente y ecológico del mercado: por cada 1 kW de electricidad consumida, genera entre 5 y 10 kW de energía térmica dependiendo de la temperatura ambiente.</p>
+														</div>
+													</div>
+												</div>
+
+												<div class="tg-faq-item">
+													<h4 class="tg-faq-q">
+														<button type="button" class="tg-faq-btn" id="tg-faq-btn-2" aria-expanded="false" aria-controls="tg-faq-panel-2">
+															<span>¿Los equipos se adaptan al tamaño de mi pileta?</span>
+															<svg class="tg-faq-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+														</button>
+													</h4>
+													<div class="tg-faq-panel" id="tg-faq-panel-2" role="region" aria-labelledby="tg-faq-btn-2">
+														<div class="tg-faq-panel-inner">
+															<p>Sí, contamos con 4 equipos de diferente potencia para diferentes tamaños de piletas.</p>
+															<p class="tg-faq-aside">Cómo calcular los litros: multiplicá los metros de largo × ancho × profundidad media (generalmente 1,4 mts) y el resultado multiplicalo por 1.000.</p>
+														</div>
+													</div>
+												</div>
+
+												<div class="tg-faq-item">
+													<h4 class="tg-faq-q">
+														<button type="button" class="tg-faq-btn" id="tg-faq-btn-3" aria-expanded="false" aria-controls="tg-faq-panel-3">
+															<span>¿Los equipos consumen mucha energía?</span>
+															<svg class="tg-faq-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+														</button>
+													</h4>
+													<div class="tg-faq-panel" id="tg-faq-panel-3" role="region" aria-labelledby="tg-faq-btn-3">
+														<div class="tg-faq-panel-inner">
+															<p>Son equipos full inverter de última generación, lo que los convierte en los más económicos del mercado. El ahorro respecto a otras opciones de climatización llega al 80%.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="tg-faq-col">
+												<h3 class="tg-faq-group-title">
+													<span class="tg-faq-group-icon-wrap"><svg class="tg-faq-group-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<circle cx="8" cy="5.5" r="2.3" stroke="currentColor" stroke-width="1.6"/>
+														<path d="M8 8.5c-2.2 0-4 1.7-4 4v4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+														<path d="M8 8.5c1.5 0 2.8.8 3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+														<rect x="14" y="10" width="8" height="7" rx="1.2" stroke="currentColor" stroke-width="1.6"/>
+														<circle cx="18" cy="13.5" r="1.6" stroke="currentColor" stroke-width="1.4"/>
+														<path d="M4 21h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+													</svg></span>
+													Instalación
+												</h3>
+
+												<div class="tg-faq-item">
+													<h4 class="tg-faq-q">
+														<button type="button" class="tg-faq-btn" id="tg-faq-btn-4" aria-expanded="false" aria-controls="tg-faq-panel-4">
+															<span>¿La instalación del equipo es complicada?</span>
+															<svg class="tg-faq-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+														</button>
+													</h4>
+													<div class="tg-faq-panel" id="tg-faq-panel-4" role="region" aria-labelledby="tg-faq-btn-4">
+														<div class="tg-faq-panel-inner">
+															<p>No, es más sencillo que instalar un aire acondicionado.</p>
+														</div>
+													</div>
+												</div>
+
+												<div class="tg-faq-item">
+													<h4 class="tg-faq-q">
+														<button type="button" class="tg-faq-btn" id="tg-faq-btn-5" aria-expanded="false" aria-controls="tg-faq-panel-5">
+															<span>¿La instalación está a cargo de Tecnogreen?</span>
+															<svg class="tg-faq-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+														</button>
+													</h4>
+													<div class="tg-faq-panel" id="tg-faq-panel-5" role="region" aria-labelledby="tg-faq-btn-5">
+														<div class="tg-faq-panel-inner">
+															<p>Nosotros podemos realizar la instalación o recomendar algún instalador de nuestra red.</p>
+														</div>
+													</div>
+												</div>
+
+												<div class="tg-faq-item">
+													<h4 class="tg-faq-q">
+														<button type="button" class="tg-faq-btn" id="tg-faq-btn-6" aria-expanded="false" aria-controls="tg-faq-panel-6">
+															<span>¿Se pueden controlar los equipos de forma automatizada o a distancia?</span>
+															<svg class="tg-faq-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+														</button>
+													</h4>
+													<div class="tg-faq-panel" id="tg-faq-panel-6" role="region" aria-labelledby="tg-faq-btn-6">
+														<div class="tg-faq-panel-inner">
+															<p>Sí, mediante una aplicación en tu móvil se puede elegir la temperatura deseada desde cualquier parte del mundo.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="tg-faq-col">
+												<h3 class="tg-faq-group-title">
+													<span class="tg-faq-group-icon-wrap"><svg class="tg-faq-group-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+														<circle cx="12" cy="9" r="6.2" stroke="currentColor" stroke-width="1.6"/>
+														<path d="M9.2 9.2l1.8 1.8 3.6-3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+														<path d="M8.5 14.3L7 21l5-2.4L17 21l-1.5-6.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg></span>
+													Garantía y uso
+												</h3>
+
+												<div class="tg-faq-item">
+													<h4 class="tg-faq-q">
+														<button type="button" class="tg-faq-btn" id="tg-faq-btn-7" aria-expanded="false" aria-controls="tg-faq-panel-7">
+															<span>¿Qué tan resistentes son los equipos y cuánto mantenimiento requieren?</span>
+															<svg class="tg-faq-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+														</button>
+													</h4>
+													<div class="tg-faq-panel" id="tg-faq-panel-7" role="region" aria-labelledby="tg-faq-btn-7">
+														<div class="tg-faq-panel-inner">
+															<p>El mantenimiento es mínimo y la durabilidad de los equipos es de 15/20 años.</p>
+														</div>
+													</div>
+												</div>
+
+												<div class="tg-faq-item">
+													<h4 class="tg-faq-q">
+														<button type="button" class="tg-faq-btn" id="tg-faq-btn-8" aria-expanded="false" aria-controls="tg-faq-panel-8">
+															<span>¿De cuántos años es la garantía?</span>
+															<svg class="tg-faq-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+														</button>
+													</h4>
+													<div class="tg-faq-panel" id="tg-faq-panel-8" role="region" aria-labelledby="tg-faq-btn-8">
+														<div class="tg-faq-panel-inner">
+															<p>Es de 1 año, más otro año adicional si controlamos el equipo a los 12 meses de instalada.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				
+		<footer id="Footer" class="clearfix">
+		
+			<div class="footer_copy">
+				<div class="container">
+					<div class="column one"> <a id="back_to_top" class="footer_button" href><i class="icon-up-open-big"></i></a>
+						<div class="copyright">&copy; 2025 / Tecnogreen / Todos los derechos reservados
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div id="Side_slide" class="right dark" data-width="250">
+		<div class="close-wrapper"> <a href="#" class="close"><i class="icon-cancel-fine"></i></a> 
+		</div>
+		<div class="menu_wrapper"></div>
+		<div class="extras">
+			<div class="extras-wrapper"></div>
+		</div>
+	</div>
+	<div id="body_overlay"></div>
+	<!-- JS -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/jquery-migrate-3.4.0.min.js"></script>
+	<script src="js/mfn.menu.js"></script>
+	<script src="js/jquery.plugins.js"></script>
+	<script src="js/jquery.jplayer.min.js"></script>
+	<script src="js/animations/animations.js"></script>
+	<script src="js/translate3d.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/email.js"></script>
+	<script src="plugins/rs-plugin-6.custom/js/revolution.tools.min.js"></script>
+	<script src="plugins/rs-plugin-6.custom/js/rs6.min.js"></script>
+	
+	<script>
+		var revapi1, tpj;
+	
+		function revinit_revslider11() {
+			jQuery(function() {
+				tpj = jQuery;
+				revapi1 = tpj("#rev_slider_1_1");
+				if(revapi1 == undefined || revapi1.revolution == undefined) {
+					revslider_showDoubleJqueryError("rev_slider_1_1");
+				} else {
+					revapi1.revolution({
+						sliderType: "hero",
+						sliderLayout: "fullwidth",
+						visibilityLevels: "1240,1240,778,778",
+						gridwidth: "1240,1240,778,778",
+						gridheight: "830,830,960,960",
+						spinner: "spinner0",
+						perspective: 600,
+						perspectiveType: "global",
+						editorheight: "830,768,521,720",
+						responsiveLevels: "1240,1240,778,778",
+						progressBar: {
+							disableProgressBar: true
+						},
+						navigation: {
+							onHoverStop: false
+						},
+						parallax: {
+							levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 30],
+							type: "scroll",
+							origo: "slidercenter",
+							speed: 0
+						},
+						fallbacks: {
+							allowHTML5AutoPlayOnAndroid: true
+						},
+					});
+				}
+			});
+		}
+		var once_revslider11 = false;
+		if(document.readyState === "loading") {
+			document.addEventListener('readystatechange', function() {
+				if((document.readyState === "interactive" || document.readyState === "complete") && !once_revslider11) {
+					once_revslider11 = true;
+					revinit_revslider11();
+				}
+			});
+		} else {
+			once_revslider11 = true;
+			revinit_revslider11();
+		}
+	</script>
+
+
+<script type="text/javascript" 
+src='https://crm.zoho.com/crm/javascript/zcga.js'> </script>
+
+<script type="text/javascript" src='https://forms.zoho.com/js/zf_gclid.js'></script>
+
+<script>
+	(function () {
+		var faqRoot = document.getElementById('tg-faq');
+		if (!faqRoot) return;
+
+		var buttons = Array.prototype.slice.call(faqRoot.querySelectorAll('.tg-faq-btn'));
+
+		function openPanel(btn, panel) {
+			btn.setAttribute('aria-expanded', 'true');
+			panel.style.maxHeight = panel.scrollHeight + 'px';
+		}
+
+		function closePanel(btn, panel) {
+			btn.setAttribute('aria-expanded', 'false');
+			panel.style.maxHeight = 0;
+		}
+
+		buttons.forEach(function (btn) {
+			var panel = document.getElementById(btn.getAttribute('aria-controls'));
+			if (!panel) return;
+
+			btn.addEventListener('click', function () {
+				var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+				buttons.forEach(function (otherBtn) {
+					if (otherBtn === btn) return;
+					var otherPanel = document.getElementById(otherBtn.getAttribute('aria-controls'));
+					if (otherPanel) closePanel(otherBtn, otherPanel);
+				});
+
+				if (isOpen) {
+					closePanel(btn, panel);
+				} else {
+					openPanel(btn, panel);
+				}
+			});
+		});
+
+		window.addEventListener('resize', function () {
+			buttons.forEach(function (btn) {
+				if (btn.getAttribute('aria-expanded') !== 'true') return;
+				var panel = document.getElementById(btn.getAttribute('aria-controls'));
+				if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
+			});
+		});
+	})();
+</script>
+
+</body>
+
+</html>
